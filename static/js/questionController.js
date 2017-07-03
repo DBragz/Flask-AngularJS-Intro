@@ -23,7 +23,7 @@ mainApp.controller("questionController", function($scope, httpService) {
     DISTRACTORS = 2
     ANSWERGREATER = 3
     ANSWERLESS = 4
-    EQUALSTRING = 'EQUALS'
+    EQUALSTRING = 'EQUAL'
     GREATERSTRING = 'GREATER'
     LESSSTRING = 'LESS'
     rowSize = 5
