@@ -1,0 +1,86 @@
+<html>
+    
+    <head>
+        <!-- Title of Webpage -->
+        <title>Demo Project</title>
+    
+        <!-- Stylesheet File Reference -->
+        <link rel='stylesheet' href='{{ url_for('static', filename='css/styles.css') }}'>
+        
+        <!-- JavaScript File References -->
+        <script src = 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js'></script>
+        <script type='text/javascript' src='{{ url_for('static', filename='js/main.js') }}'></script>
+        <script type='text/javascript' src='{{ url_for('static', filename='js/httpService.js') }}'></script>
+        <script type='text/javascript' src='{{ url_for('static', filename='js/questionController.js') }}'></script>
+    </head>
+    
+    <body>
+        <!-- Main App Reference -->
+        <div ng-app='mainApp' ng-controller = 'questionController' id='mainApp'>
+            
+            <!-- Main Header -->
+            <h2>AngularJS / Flask Application </h2>
+            
+            <!-- Table to display Questions -->
+            <table id='questionTable' align='center'>
+                
+                <!-- Column Labels -->
+                <tr>
+                   <th>Question</th>
+                   <th>Answer</th>
+                   <th>Distractors</th>
+                </tr>
+             
+                <!-- Row Reference for all properties of a Question -->
+                <tr ng-repeat='question in listView'>
+                   <td>[[question.question]]</td>
+                   <td>[[question.answer]]</td>
+                   <td>[[question.distractors]]</td>
+                   <td><md-button ng-show='insertMode' ng-click='deleteQ(question.questionid)'>Delete Question</md-button></td>
+                   <td><md-button ng-show='insertMode' ng-click='updateInput(question.questionid, question.question, question.answer, question.distractors)'>Update Question</md-button></td>
+                    
+                </tr>
+            
+            </table>
+            
+            
+        <!-- Next and Previous buttons for moving back and forth between pages of Questions -->
+        <div class='needPadding' ng-show='listView.length'>
+            <md-button ng-click='previousPage()'>Previous</md-button>
+            <md-button ng-click='nextPage()'>Next</md-button>
+        </div>
+            
+        <!-- Header to display when no Questions have been selected from database -->
+        <div class='needPadding' ng-show='!listView.length'>
+            <h3>No Questions Currently Selected</h3>
+        </div>
+         
+         <!-- Inputboxes for adding and updating Questions -->
+         <div class='needPadding'>
+            <label class='questionInput'>Question: <input type='text' name='questionInput' ng-model='questionInput' required></label>
+            <label class='questionInput'>Answer: <input type='number' name='answerInput' ng-model='answerInput' required></label>
+            <label class='questionInput'>Distractors: <input type='text' name='distractorsInput' ng-model='distractorsInput' required></label>
+            <md-button class='questionInput' ng-click='handleInputButton(questionInput,answerInput,distractorsInput)'>[[submitBtn]]</md-button>
+         </div>
+        
+        <!-- Input box for compares checks to question properties -->
+        <div class='needPadding'>
+            <div class='left-div'>
+                <label>Check the following string or value: <input type='text' name='containsInput' ng-model='containsInput' required></label>
+            </div>
+            <div class='needPadding right-div' layout='column' layout-align='center center' >
+                <div class='selectBtn'><md-button ng-click='getQuestionsWhereContains(0,containsInput)'>Question Contains</md-button></div>
+                <div class='selectBtn'><md-button ng-click='getQuestionsWhereContains(1,containsInput)'>Answer Equals</md-button></div>
+                <div class='selectBtn'><md-button ng-click='getQuestionsWhereContains(2,containsInput)'>Distractors Contains</md-button></div>
+                <div class='selectBtn'><md-button ng-click='getQuestionsWhereContains(3,containsInput)'>Answer Greater Than</md-button></div>
+                <div class='selectBtn'><md-button ng-click='getQuestionsWhereContains(4,containsInput)'>Answer Less Than</md-button></div>
+            </div>
+        </div>
+    
+        <!-- Button to get all of the Questions -->
+        <md-button ng-click='getAllQs()'>Get All Questions</md-button>    
+        
+        </div>
+    </body>
+    
+</html>

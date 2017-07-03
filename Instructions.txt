@@ -1,0 +1,31 @@
+Setup 
+
+- Install python
+- Hook up environment variables to use python through command line
+- Install pip
+- Hook up environment variables to use pip through command line
+- Install Flask
+- Unzip all files and folder into the same director
+- Run Command -  FlaskServerApp.py {file with questions in csv}
+- Go to webbrowser and go to url http://127.0.0.1:5000
+- Access API funcitonality through AngularJS website
+
+Tips:
+
+- All endpoints start at the url http://127.0.0.1:5000
+- Support the following GET Requests
+    - http://127.0.0.1:5000/
+    - http://127.0.0.1:5000/getquestion
+    - http://127.0.0.1:5000/getquestions
+    - http://127.0.0.1:5000/getquestionsfromanswer
+    - http://127.0.0.1:5000/getquestionsfromquestion
+    - http://127.0.0.1:5000/getquestionsfromdistractor
+    
+- Support the following POST Requests
+     - http://127.0.0.1:5000/insertquestion
+     - http://127.0.0.1:5000/updatequestion
+     - http://127.0.0.1:5000/updateanswer
+     - http://127.0.0.1:5000/updatedistractors
+     
+- Support the following DELETE Requests
+     - http://127.0.0.1:5000/deletequestion

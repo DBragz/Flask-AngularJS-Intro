@@ -1,0 +1,52 @@
+/***************************
+****************************
+filename: style.css
+description: Styling used for Angular/Flask Project.
+author: Daniel Ribeirinha-Braga
+****************************
+***************************/
+
+#mainApp, table  {
+    text-align: center;
+}
+th , td {
+    border-collapse: collapse;
+    padding: 20px;
+}
+label {  
+    padding: 10px;
+}
+table {
+    padding: 20px;  
+}
+md-button {
+    border: 1px solid black;
+    padding: 5px;
+}
+.needPadding {
+    padding-bottom: 40px;
+}
+.questionInput {
+    height: 40px;
+}
+.left-div
+{
+  display: inline-block;
+  max-width: 500px;
+  text-align: left;
+  padding: 30px;
+  margin: 15px;
+  vertical-align: top;
+}
+.right-div
+{
+  display: inline-block;
+  max-width: 600px;
+  max-height: 500px;
+  padding: 30px;
+  margin: 15px;
+}
+.selectBtn {
+    height: 30px;
+    margin: 5px;
+}
