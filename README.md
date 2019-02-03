@@ -21,11 +21,11 @@ python -m pip install Flask
 ### Compiles / Minifies / Deployment
 
 ```
-FLASK_APP=FlaskServerApp.py flask run
+export FLASK_APP=FlaskServerApp.py 
+flask run
 ```
 
 ## Built With
-* [Python](https://develoer.android.com/studio/) - Android Studio is the official integrated development environment for Google's Android operating system.
 * [Flask](http://flask.pocoo.org/) - A micro web framework written in Python.
 
 ## Authors
