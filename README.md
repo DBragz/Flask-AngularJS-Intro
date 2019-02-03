@@ -18,7 +18,7 @@ Python
 python -m pip install Flask
 ```
 
-### Compiles / Minifies / Deployment
+### Deployment
 
 ```
 export FLASK_APP=FlaskServerApp.py 
