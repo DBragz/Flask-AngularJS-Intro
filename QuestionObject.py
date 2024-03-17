@@ -10,8 +10,9 @@
 
 class Question:
 
-    """ Constructor for the Question object.
-        """
+    """
+        Constructor for the Question object.
+    """
         
     def __init__(self, array):
         self.questionid = array[0]
